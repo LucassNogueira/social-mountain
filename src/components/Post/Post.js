@@ -69,7 +69,7 @@ export default class Post extends Component {
             style={{ display: showMasterMenu ? "flex" : "none" }}
           >
             <span onClick={this.showEdit}>Edit</span>
-            <span onClick={deletePostFn(id)}>Delete</span>
+            <span onClick={() => deletePostFn(id)}>Delete</span>
           </div>
         </div>
 

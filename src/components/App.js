@@ -17,6 +17,7 @@ class App extends Component {
     this.updatePost = this.updatePost.bind(this);
     this.deletePost = this.deletePost.bind(this);
     this.createPost = this.createPost.bind(this);
+    this.filterPost = this.filterPost.bind(this);
   }
 
   componentDidMount() {
@@ -39,7 +40,7 @@ class App extends Component {
 
   createPost(text) {
     axios
-      .post("practiceapi.devmountain.com/api/posts", { text })
+      .post("https://practiceapi.devmountain.com/api/posts", { text })
       .then((res) => this.setState({ posts: res.data }));
   }
 
