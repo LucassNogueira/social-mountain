@@ -20,7 +20,7 @@ export default class Search extends Component {
     this.setState({ searchTerm: word });
   }
   render() {
-    const { filterPost } = this.props;
+    const { filterPost, componentDidMount } = this.props;
     return (
       <section className="Search__parent">
         <div className="Search__content">
@@ -28,9 +28,11 @@ export default class Search extends Component {
 
           <SearchIcon
             id="Search__icon"
-            onClick={() => {
-              filterPost(this.state.searchTerm);
-            }}
+            onClick={() =>
+              this.state.searchTerm === ""
+                ? componentDidMount()
+                : filterPost(this.state.searchTerm)
+            }
           />
         </div>
       </section>

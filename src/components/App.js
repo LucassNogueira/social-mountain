@@ -66,7 +66,10 @@ class App extends Component {
 
     return (
       <div className="App__parent">
-        <Header filterPost={this.filterPost} />
+        <Header
+          filterPost={this.filterPost}
+          componentDidMount={this.componentDidMount}
+        />
 
         <section className="App__content">
           <Compose createPostFn={this.createPost} />
