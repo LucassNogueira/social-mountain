@@ -7,8 +7,8 @@ import SearchIcon from "react-icons/lib/md/search";
 //////////////////////////////////////////////////////// THIS COMPONENT IS BEING RENDERED IN THE *HEADER* COMPONENT
 
 export default class Search extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       searchTerm: "",
     };
@@ -20,7 +20,7 @@ export default class Search extends Component {
     this.setState({ searchTerm: word });
   }
   render() {
-    const { filteredPostFn } = this.props;
+    const { filterPost } = this.props;
     return (
       <section className="Search__parent">
         <div className="Search__content">
@@ -28,7 +28,7 @@ export default class Search extends Component {
 
           <SearchIcon
             id="Search__icon"
-            onClick={() => filteredPostFn(this.state.searchTerm)}
+            onClick={() => filterPost(this.state.searchTerm)}
           />
         </div>
       </section>

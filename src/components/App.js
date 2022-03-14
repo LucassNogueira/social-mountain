@@ -55,7 +55,7 @@ class App extends Component {
 
     return (
       <div className="App__parent">
-        <Header filterPostFn={this.filterPost} />
+        <Header filterPost={this.filterPost} />
 
         <section className="App__content">
           <Compose createPostFn={this.createPost} />
