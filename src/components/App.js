@@ -45,9 +45,20 @@ class App extends Component {
   }
 
   filterPost(text) {
-    axios
-      .get(`https://practiceapi.devmountain.com/api/posts/filter?text=${text}`)
-      .then((res) => this.setState({ posts: res.data }));
+    console.log(this.state);
+    this.state.text === ""
+      ? axios
+          .get("https://practiceapi.devmountain.com/api/posts")
+          .then((res) => {
+            this.setState({ posts: res.data });
+          })
+      : axios
+          .get(
+            `https://practiceapi.devmountain.com/api/posts/filter?text=${text}`
+          )
+          .then((res) => {
+            this.setState({ posts: res.data });
+          });
   }
 
   render() {

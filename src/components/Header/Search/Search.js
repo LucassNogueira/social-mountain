@@ -28,7 +28,9 @@ export default class Search extends Component {
 
           <SearchIcon
             id="Search__icon"
-            onClick={() => filterPost(this.state.searchTerm)}
+            onClick={() => {
+              filterPost(this.state.searchTerm);
+            }}
           />
         </div>
       </section>
