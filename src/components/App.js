@@ -45,8 +45,7 @@ class App extends Component {
   }
 
   filterPost(text) {
-    console.log(this.state);
-    this.state.text === ""
+    text === ""
       ? axios
           .get("https://practiceapi.devmountain.com/api/posts")
           .then((res) => {
